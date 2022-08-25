@@ -8,4 +8,8 @@ public class Cpf {
             throw new IllegalArgumentException("CPF invalido!");
         }
     }
+
+    public String getNumero() {
+        return numero;
+    }
 }
