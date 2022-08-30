@@ -1,4 +1,4 @@
-package escola.aluno;
+package escola.dominio.aluno;
 
 public class Cpf {
     private String numero;
