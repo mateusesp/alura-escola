@@ -1,4 +1,4 @@
-package br.com.alura.escola.gamificacao.dominio.selo;
+package br.com.alura.escola.academico.selo;
 
 import org.junit.jupiter.api.Test;
 
