@@ -8,6 +8,7 @@ import escola.dominio.aluno.RepositorioDeAlunos;
 import java.util.ArrayList;
 import java.util.List;
 
+
 public class RepositorioDeAlunosEmMemoria implements RepositorioDeAlunos {
 
     private List<Aluno> matriculados = new ArrayList<>();
@@ -20,7 +21,7 @@ public class RepositorioDeAlunosEmMemoria implements RepositorioDeAlunos {
     @Override
     public Aluno buscarPorCpf(Cpf cpf) {
         return this.matriculados.stream()
-                .filter(a -> a.getCpf().equals(cpf))
+                .filter(a -> a.getCpf().equals(cpf.getNumero()))
                 .findFirst()
                 .orElseThrow(() -> new AlunoNaoEncontrado(cpf));
     }
@@ -29,4 +30,5 @@ public class RepositorioDeAlunosEmMemoria implements RepositorioDeAlunos {
     public List<Aluno> listarTodosAlunosMatriculados() {
         return this.matriculados;
     }
+
 }

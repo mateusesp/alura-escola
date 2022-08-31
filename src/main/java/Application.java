@@ -1,5 +1,5 @@
-import escola.aplicacao.matricular.MatricularAluno;
-import escola.aplicacao.matricular.MatricularAlunoDto;
+import escola.aplicacao.aluno.matricular.MatricularAluno;
+import escola.aplicacao.aluno.matricular.MatricularAlunoDto;
 import escola.infra.aluno.RepositorioDeAlunosEmMemoria;
 
 public class Application {

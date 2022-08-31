@@ -1,4 +1,4 @@
-package escola.aplicacao.matricular;
+package escola.aplicacao.aluno.matricular;
 
 import escola.dominio.aluno.Aluno;
 import escola.dominio.aluno.RepositorioDeAlunos;
