@@ -2,6 +2,8 @@ package br.com.alura.escola.aplicacao.aluno.matricular;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
+import br.com.alura.escola.dominio.PublicadorDeEventos;
+import br.com.alura.escola.dominio.aluno.LogDeAlunoDeMatriculado;
 import org.junit.jupiter.api.Test;
 
 import br.com.alura.escola.dominio.aluno.Aluno;
@@ -14,7 +16,11 @@ class MatricularAlunoTest {
     void alunoDeveriaSerPersistido() {
         // MOCK -> Mockito
         RepositorioDeAlunosEmMemoria repositorio = new RepositorioDeAlunosEmMemoria();
-        MatricularAluno useCase = new MatricularAluno(repositorio);
+        PublicadorDeEventos publicador = new PublicadorDeEventos();
+        
+        publicador.adicionar(new LogDeAlunoDeMatriculado());
+
+        MatricularAluno useCase = new MatricularAluno(repositorio, publicador);
 
         MatricularAlunoDto dados = new MatricularAlunoDto("Fulano", "123.456.789-00", "fulano@email.com");
         useCase.executa(dados);
